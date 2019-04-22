@@ -4,11 +4,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
 <%#= f.collection_select :care, "true", "false"  %>
-<%= f.select :care, [["Parent", true], ["Nanny", false]], {},class: "custom-select select22" %>
-  <div class="field">
-      <div><%= f.check_box :care, {}, true %> <%= f.label :care, "parent" %> </div>
-      <div><%= f.check_box :care, {}, false %> <%= f.label :care, "nanny" %> </div>
-  </div>
+<%= f.select :care, [["Caredom Member", true], ["Caregiver Member", false]], {},class: "custom-select select22" %>
+ 
   <div class="field form">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -33,6 +30,7 @@
     <%= f.label :nationality %><br />
     <%= f.text_field :nationality %>
   </div>
+
 
   <div class="field">
     <%= f.label :password %>
