@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2019_04_22_080921) do
     t.string "name"
     t.integer "phone"
     t.string "nationality"
-    t.boolean "care"
     t.bigint "city_id"
+    t.boolean "care"
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -19,7 +19,6 @@ current_user
   def create
     puts params
     @user = User.new!(user_params)
-
     puts @user    
     @user.save
     redirect_to @user
@@ -29,6 +28,6 @@ current_user
 
   private
     def user_params
-      params.require(:user).permit(:name, :city_id)
+      params.require(:user).permit(:name, :city_id , :care)
     end
 end
