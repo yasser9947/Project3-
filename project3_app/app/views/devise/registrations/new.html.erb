@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 <%= @name %>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 <button type="button" class="btn btn-outline-secondary Parent">Caredom Member</button>
 <button type="button" class="btn btn-outline-secondary Nanny ">Caregiver Member</button>
@@ -8,39 +8,30 @@
 
  <div class = "paentDesplay">
 
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <div class="field form">
-        <%= f.label :name %><br />
-        <%= class="form-control" f.text_field :name %>
-      </div>
+  <div class="field form">
+    <%= f.text_field :name %>
+  </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-    </div>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
 
+
   <div class="field">
-    <%= f.label :phone %><br />
     <%= f.text_field :phone %>
   </div>
 
   <div class="field">
-    <%= f.label :city %><br />
     <%= f.collection_select(:city_id, City.all, :id, :name, {} ,class: "custom-select select22" ) %>
   </div>
 
   <div class="field">
-    <%= f.label :nationality %><br />
     <%= f.text_field :nationality %>
   </div>
 
 
   <div class="field">
-    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -48,7 +39,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
@@ -58,70 +48,9 @@
 
  </div>
 <div class = "nannyDesplay">
-<h1> naany rigester</h1>
+<h1> Welcome to CAREDOM, you signed up as Caregiver Mebmer</h1>
 </div>
 
 <%= render "devise/shared/links" %>
-
-
-
-
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="email">
-    </div>
-
-
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
-  </div>
-
-
- <div class="form-group">
-    <label for="inputAddress">Full Name</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="First Name     Last Name">
-  </div>
-
-
-  
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-
-  
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-
-  <div class="form-group">
-    <label for="inputAddress3">Contact Number</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="+966 555555555">
-  </div>
-
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-
-    <div class="form-group col-md-4">
-      <label for="inputState">Area</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
- 
-  </div>
-  <div class="actions">
-  <button type="submit" class="btn btn-primary">Sign Up</button>
-  </div>
-</form>
 
 <% end %>
