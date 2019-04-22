@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_080921) do
+ActiveRecord::Schema.define(version: 2019_04_22_130712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "children", force: :cascade do |t|
+    t.integer "num"
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "Allergy"
+  end
+
   create_table "cities", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seniors", force: :cascade do |t|
+    t.integer "age"
+    t.string "gender"
+    t.string "explainsituation"
+    t.datetime "date"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,8 +50,13 @@ ActiveRecord::Schema.define(version: 2019_04_22_080921) do
     t.string "name"
     t.integer "phone"
     t.string "nationality"
-    t.bigint "city_id"
     t.boolean "care"
+    t.bigint "city_id"
+    t.string "area"
+    t.string "address"
+    t.integer "age"
+    t.string "experience"
+    t.string "description"
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

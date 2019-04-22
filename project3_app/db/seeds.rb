@@ -17,8 +17,6 @@
 #     City.create(city)
 # end
 
-
-
 City.create(name: 'Riyadh')
 City.create(name: 'Az Zulfi')
 City.create(name: 'Jeddah')
