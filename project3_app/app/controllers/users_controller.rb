@@ -29,6 +29,6 @@ current_user
 
   private
     def user_params
-      params.require(:user).permit(:name, :city_id)
+      params.require(:user).permit(:name, :city_id , :care)
     end
 end

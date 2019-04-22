@@ -2,13 +2,12 @@
 <%= @name %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+<button type="button" class="btn btn-outline-secondary Parent">Parent</button>
+<button type="button" class="btn btn-outline-secondary Nanny ">Nanny</button>
 
 <%#= f.collection_select :care, "true", "false"  %>
 <%= f.select :care, [["Parent", true], ["Nanny", false]], {},class: "custom-select select22" %>
-  <div class="field">
-      <div><%= f.check_box :care, {}, true %> <%= f.label :care, "parent" %> </div>
-      <div><%= f.check_box :care, {}, false %> <%= f.label :care, "nanny" %> </div>
-  </div>
+<div class = "paentDesplay">
   <div class="field form">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -51,11 +50,14 @@
     <%= f.submit "Sign up" %>
   </div>
 
- 
-
-
+ </div>
+<div class = "nannyDesplay">
+<h1> naany rigester</h1>
+</div>
 
 <% end %>
+
+
 
 <%= render "devise/shared/links" %>
 
