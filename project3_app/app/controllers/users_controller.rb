@@ -11,10 +11,17 @@ current_user
   end
   def new
     @user = User.new
+    # @user = User.find(params[:id])
+    # city = User.find(params[:city_ids])
+    # puts city 
+    # @user.cities.push(city)
   end
   def create
     puts params
-    @user = User.create(user_params)
+    @user = User.new!(user_params)
+
+    puts @user    
+    @user.save
     redirect_to @user
   end
   def update
@@ -22,6 +29,6 @@ current_user
 
   private
     def user_params
-      params.require(:user).permit(:name, :city)
+      params.require(:user).permit(:name, :city_id)
     end
 end
