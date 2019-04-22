@@ -1,17 +1,22 @@
 <h2>Sign up</h2>
 <%= @name %>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<button type="button" class="btn btn-outline-secondary Parent">Parent</button>
-<button type="button" class="btn btn-outline-secondary Nanny ">Nanny</button>
+<button type="button" class="btn btn-outline-primary Parent">Parent</button>
+<button type="button" class="btn btn-outline-success Nanny ">Nanny</button>
 
 
 
  <div class = "paentDesplay">
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
   <div class="field form">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+  </div>
+
+  <div class="field form">
+    <%= f.hidden_field :care %>
+    
   </div>
 
   <div class="field">
@@ -60,11 +65,13 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+  <%end%>
 </div>
 
 
 <div class = "nannyDesplay">
-<h1> naany rigester</h1>
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
  <div class="field form">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -122,8 +129,9 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+  <% end %>
+
 </div>
 
-<% end %>
 <%= render "devise/shared/links" %>
 
