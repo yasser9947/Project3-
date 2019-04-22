@@ -12,7 +12,6 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
-
   <div class="field">
     <%= f.label :phone %><br />
     <%= f.text_field :phone %>
@@ -27,6 +26,8 @@
     <%= f.label :nationality %><br />
     <%= f.text_field :nationality %>
   </div>
+
+  
 
   <div class="actions">
     <%= f.submit "Resend confirmation instructions" %>
