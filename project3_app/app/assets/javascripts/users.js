@@ -7,7 +7,6 @@ $(function () {
     $(".nannyDesplay").css("display", "block");
     // nannyDesplay
   });
-  $("p").css("background-color");
 // $("p").css("display", "none");
     // display:none;
 
