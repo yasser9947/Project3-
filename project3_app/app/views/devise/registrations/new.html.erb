@@ -2,8 +2,8 @@
 <%= @name %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<button type="button" class="btn btn-outline-secondary Parent">Parent</button>
-<button type="button" class="btn btn-outline-secondary Nanny ">Nanny</button>
+<button type="button" class="btn btn-outline-secondary Parent">Caredom Member</button>
+<button type="button" class="btn btn-outline-secondary Nanny ">Caregiver Member</button>
 
 
  
@@ -50,7 +50,6 @@
     <%= f.submit "Sign up" %>
   </div>
 
-<% end %>
  </div>
 <div class = "nannyDesplay">
 <h1> naany rigester</h1>
