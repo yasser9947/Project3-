@@ -19,7 +19,6 @@ current_user
   def create
     puts params
     @user = User.new!(user_params)
-
     puts @user    
     @user.save
     redirect_to @user

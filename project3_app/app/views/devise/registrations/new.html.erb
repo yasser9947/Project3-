@@ -5,17 +5,15 @@
 <button type="button" class="btn btn-outline-secondary Parent">Parent</button>
 <button type="button" class="btn btn-outline-secondary Nanny ">Nanny</button>
 
-<%#= f.collection_select :care, "true", "false"  %>
-<%= f.select :care, [["Parent", true], ["Nanny", false]], {},class: "custom-select select22" %>
-<div class = "paentDesplay">
+ 
   <div class="field form">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
 
-<div class="field">
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -25,13 +23,14 @@
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.collection_select(:city_id, City.all, :id, :name) %>
+    <%= f.collection_select(:city_id, City.all, :id, :name, {} ,class: "custom-select select22" ) %>
   </div>
 
   <div class="field">
     <%= f.label :nationality %><br />
     <%= f.text_field :nationality %>
   </div>
+
 
   <div class="field">
     <%= f.label :password %>
@@ -50,6 +49,7 @@
     <%= f.submit "Sign up" %>
   </div>
 
+<% end %>
  </div>
 <div class = "nannyDesplay">
 <h1> naany rigester</h1>
