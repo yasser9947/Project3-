@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'requests/index'
+  get 'requests/new'
+  get 'requests/show'
+  get 'requests/edit'
   get 'seniors/index'
   get 'seniors/new'
   get 'seniors/show'
