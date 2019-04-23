@@ -1,102 +1,12 @@
 
-<h2>Sign up</h2>
-<%= @name %>
-<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<button type="button" class="btn btn-outline-secondary Parent">Caredom Member</button>
-<button type="button" class="btn btn-outline-secondary Nanny ">Caregiver Member</button>
- <div class = "paentDesplay">
-<div class = "frist_table">
-  <div class="field form">
-    <%= f.text_field :name %>
-  </div>
-  <div class="form">
-    <%= f.hidden_field :care, :value => 'true' %>
-    
-  <div class="field">
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
-  </div>
-  <div class="field">
-    <%= f.text_field :nationality %>
-  </div>
-
-  <div class="field">
-   <%= f.label :area %><br />
-    <%= f.text_field :area %>
-  </div>
 
 
-
-  <div class="field">
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-</div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-</div>
-
-<div class = "nannyDesplay">
-<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field form">
-    <%= f.text_field :name %>
-  </div>
-  <div class="field form">
-    <%= f.hidden_field :care, :value => 'false' %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-  <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
-  </div>
-  <div class="field">
-    <%= f.text_field :nationality %>
-  </div>
-  <div class="field">
-    <%= f.number_field :age,  {min: 18} %>
-  </div>
-   <div class="field">
-    <%= f.text_field :experience %>
-  </div>
-  <div class="field">
-    <%= f.text_field :description %>
-  </div>
-   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-</div>
-</div>
 <%# Sing Up %>
-<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
 <div class=" register">
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
                 <div class="row">
                     <div class="col-md-3 register-left">
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
@@ -144,8 +54,11 @@
                                                 </label>
                                             </div>
                                         </div>
+
                                     </div>
-                                    <div class="col-md-6">
+                             
+                                    <div class="col-md-6 Nanny1">
+
                                         <div class="form-group">
                                        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                                         </div>
@@ -159,48 +72,57 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+    <%= f.submit "Sign up" , class:"btnRegister"  %>
                                     </div>
+                                    
                                 </div>
                             </div>
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+<% end%>
+                                          <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+                            <div class="tab-pane fade show Nanny1" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Apply as a Hirer</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+    <%= f.text_field :name %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+    <%= f.text_field :phone %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+    <%= f.text_field :nationality %>
                                         </div>
-
+ <div class="field form">
+    <%= f.hidden_field :care, :value => 'false' %>
+  </div>
 
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+ <% if @minimum_password_length %>
+  
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password" %>                                        </div>
+                                        <div class="form-group">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                             <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
+
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                                <option>What is your Birthdate?</option>
-                                                <option>What is Your old Phone Number</option>
-                                                <option>What is your Pet Name?</option>
-                                            </select>
+    <%= f.number_field :age,  {min: 18} %>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="`Answer *" value="" />
+ <div class="form-group">
+                                            <%= f.text_field :experience %>
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+
+                                         <%= f.submit "Sign up" , class: "btnRegister" %>
+
                                     </div>
                                 </div>
                             </div>
