@@ -11,11 +11,11 @@
 #     {name: 'A'}
 # ]
 
-# City.destroy_all
 
 # cities.each do |city|
 #     City.create(city)
 # end
+City.destroy_all
 
 City.create(name: 'Riyadh')
 City.create(name: 'Az Zulfi')
