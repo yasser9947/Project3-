@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :request
+
 
   get 'requests/index'
   get 'requests/new'
@@ -12,7 +15,6 @@ Rails.application.routes.draw do
   get 'childs/new'
   get 'childs/show'
   get 'childs/edit'
-  devise_for :users
  get 'users/home'
  get 'users/show'
 
