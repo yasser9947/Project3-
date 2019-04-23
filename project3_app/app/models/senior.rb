@@ -1,0 +1,2 @@
+class Senior < ApplicationRecord
+end
