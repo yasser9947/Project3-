@@ -4,9 +4,7 @@
 <button type="button" class="btn btn-outline-primary Parent">Parent</button>
 <button type="button" class="btn btn-outline-success Nanny ">Nanny</button>
 
-
-
- <div class = "paentDesplay">
+<div class = "paentDesplay">
  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
   <div class="field form">
@@ -66,7 +64,6 @@
   </div>
   <%end%>
 </div>
-
 
 <div class = "nannyDesplay">
  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -128,6 +125,5 @@
     <%= f.submit "Sign up" %>
   </div>
   <% end %>
-
 </div>
 
