@@ -1,2 +1,0 @@
-class Senior < ApplicationRecord
-end

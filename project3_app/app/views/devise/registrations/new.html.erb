@@ -1,32 +1,34 @@
 <h2>Sign up</h2>
 <%= @name %>
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<button type="button" class="btn btn-outline-primary Parent">Parent</button>
-<button type="button" class="btn btn-outline-success Nanny ">Nanny</button>
-
+<button type="button" class="btn btn-outline-secondary Parent">Caredom Member</button>
+<button type="button" class="btn btn-outline-secondary Nanny ">Caregiver Member</button>
 
 
  <div class = "paentDesplay">
- <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
   <div class="field form">
-    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
 
+<<<<<<< HEAD
   <div class="form">
     <%= f.hidden_field :care, :value => 'true' %>
     
+=======
+  <div class="field form">
+    <%= f.hidden_field :care %>
+>>>>>>> 93c4f7203d70c4d65960eccfd3a318c9f687e720
   </div>
 
+
   <div class="field">
-    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone, class: "input-medium bfh-phone" %>
+    <%= f.text_field :phone %>
   </div>
 
   <div class="field">
@@ -36,21 +38,16 @@
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.collection_select(:city_id, City.all, :id, :name, {} ,class: "custom-select select22" ) %>
-  </div>
+    <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
 
- <div class="field">
-    <%= f.label :area %><br />
-    <%= f.text_field :area %>
-  </div>
-
-   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.text_field :nationality %>
+  </div>
+
+
+  <div class="field">
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -58,22 +55,22 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-  <%end%>
+<% end %>
 </div>
 
 
 <div class = "nannyDesplay">
- <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
- <div class="field form">
-    <%= f.label :name %><br />
+
+  <div class="field form">
     <%= f.text_field :name %>
   </div>
 
@@ -82,42 +79,42 @@
     
   </div>
   <div class="field">
-    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone, class: "input-medium bfh-phone" %>
+    <%= f.text_field :phone %>
   </div>
 
   <div class="field">
-    <%= f.label :nationality %><br />
-    <%= f.text_field :nationality %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %><br />
     <%= f.collection_select(:city_id, City.all, :id, :name, {} ,class: "custom-select select22" ) %>
   </div>
 
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
+    <%= f.label :city %><br />
+    <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
+    <%= f.text_field :nationality %>
+
   </div>
 
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age,  {min: 18} %>
+
+  </div>
+
+
    <div class="field">
-    <%= f.label :experience %><br />
     <%= f.text_field :experience %>
   </div>
 
   <div class="field">
-    <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
 
+  
   <div class="field">
-    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -125,17 +122,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-  <% end %>
-
+<% end %>
 </div>
-
-<%= render "devise/shared/links" %>
 
