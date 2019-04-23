@@ -5,7 +5,7 @@ $(function () {
     // alert("Handle user.Nanny");
     $(".paentDesplay").css("display", "none");
     $(".nannyDesplay").css("display", "block");
-    $('#user_care').val('false')
+    // $('#user_care').val('false')
     // nannyDesplay
   });
 
@@ -15,7 +15,7 @@ $(function () {
     $(".paentDesplay").css("display", "block");
     $(".nannyDesplay").css("display", "none");
     // alert("Handle user.Parent");
-    $('#user_care').val('true')
+    // $('#user_care').val('true')
   });
 
 })

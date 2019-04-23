@@ -1,3 +1,5 @@
+<% if @current_user.care == true %> <parent>
+
 <h2> name: </h2>
 <h4><%= @current_user.name %></h4>
 
@@ -15,3 +17,26 @@
 
 <h4><%  @current_user.care %> </h4>
 
+<% else%>     <nanny >
+
+<h2> name: </h2>
+<h4><%= @current_user.name %></h4>
+
+<h2> email:</h2>
+ <h4><%= @current_user.email %> </h4>
+
+<h2> phone: </h2>
+ <h4><%= @current_user.phone %> </h4>
+
+<h2>User city: </h2>
+<h4><%= @current_user.city.name %> </h4>
+
+<h2>User nationality:  </h2>
+<h4><%= @current_user.nationality%></h4>
+
+<h4><%  @current_user.care %> </h4>
+
+
+
+
+<%end%>
