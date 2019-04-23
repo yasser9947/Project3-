@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'requests/index'
   get 'requests/new'
   get 'requests/show'
@@ -15,8 +16,7 @@ Rails.application.routes.draw do
  get 'users/home'
  get 'users/show'
 
-  resources :child
-  resources :senior
+ resources :requests
    devise_scope :user do
     authenticated :user do
       root 'users#index', as: :authenticated_root
