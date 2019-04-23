@@ -1,3 +1,5 @@
+<% if @current_user.care == true%>
+
 <div class="frame">
   <div class="center">
     
@@ -5,7 +7,7 @@
 			<div class="image">
 				<div class="circle-1"></div>
 				<div class="circle-2"></div>
-				<img src="http://100dayscss.com/codepen/jessica-potter.jpg" width="70" height="70" alt="Jessica Potter">
+                <%= image_tag("logo.png",  height: '70', width: '70') %>
 			</div>
 			
 			<div class="name"><%= @current_user.name %></div>
@@ -13,9 +15,9 @@
 			
 
 			<div class="actions">
-				<button class="btn"> <%= link_to 'Request Service', requests_path %></button>
-				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path %></button>
-                <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></button>
+				<button class="btn"> <%= link_to 'Request Service', requests_path, class: "brown" %></button>
+				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
+                <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
 			</div>
 		</div>
 		
@@ -35,3 +37,52 @@
 		</div>
   </div>
 </div>
+<% else %>
+
+<h1> Welcome to Caredom! you signed up as a Caregiver member. </h1>
+
+
+
+<div class="frame">
+  <div class="center">
+    
+		<div class="profile">
+			<div class="image">
+				<div class="circle-1"></div>
+				<div class="circle-2"></div>
+                <%= image_tag("logo.png",  height: '70', width: '70') %>
+			</div>
+			
+			<div class="name"><%= @current_user.name %></div>
+			<div class="job"> <%= @current_user.nationality%> </div>
+			
+
+			<div class="actions">
+				<button class="btn"> <%= link_to 'Request Service', requests_path, class: "brown" %></button>
+				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
+                <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
+			</div>
+		</div>
+		
+		<div class="stats">
+			<div class="box">
+				<span class="value">Email:</span>
+				<span class="parameter"><%= @current_user.email %></span>
+			</div>
+			<div class="box">
+				<span class="value">Phone:</span>
+				<span class="parameter"> <%= @current_user.phone %> </span>
+			</div>
+			<div class="box">
+				<span class="value">City:</span>
+				<span class="parameter"><%= @current_user.city.name %></span>
+			</div>
+		</div>
+  </div>
+</div>
+
+
+
+
+
+<% end%>
