@@ -4,11 +4,11 @@
 a:hover, a:visited, a:link, a:active{
   // pointer-events: none;
   text-decoration: none;
-color: #786450;
+color: #F1F2EB;
 }
 
 body{
-  background-color: #F5E8DF;
+  background-color: #D8DAD3;
 }
 // .navbar-link{
 // text-decoration: none;
@@ -62,7 +62,7 @@ width: 300px;
     min-width: 230px;
     max-width: 315px;
     width: 100%;
-    color: #ffffff;
+    color: #F1F2EB;
     text-align: left;
     line-height: 1.4em;
     background-color: #141414;
@@ -97,8 +97,8 @@ width: 300px;
   }
   .snip1336 figcaption a {
     padding: 5px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    border: 1px solid #F1F2EB;
+    color: #F1F2EB;
     font-size: 0.7em;
     text-transform: uppercase;
     margin: 10px 0;
@@ -148,8 +148,9 @@ width: 300px;
 /////////////////////////////////////////////Parent profile styling
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
-$brown: #786450;
-
+$brown: #084C61;
+.brown{ color: $brown !important;}
+.brown:hover { color: #fff !important;}
 .frame {
   position: absolute;
   top: 50%;
@@ -161,10 +162,10 @@ $brown: #786450;
   border-radius: 2px;
   box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
 	background: #CA7C4E;
-  background: -webkit-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
-  background: -moz-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
-  background: -o-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
-  background: linear-gradient(to top right, #EEBE6C 0%, #CA7C4E 100%); 
+  background: -webkit-linear-gradient(bottom left, #D8DAD3 0%, #628395 100%);
+  background: -moz-linear-gradient(bottom left, #D8DAD3 0%, #628395 100%);
+  background: -o-linear-gradient(bottom left, #D8DAD3 0%, #628395 100%);
+  background: linear-gradient(to top right, #D8DAD3 0%, #628395 100%); 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEBE6C', endColorstr='#CA7C4E',GradientType=1 ); 
   color: $brown;
 	font-family: 'Open Sans', Helvetica, sans-serif;
@@ -178,7 +179,7 @@ $brown: #786450;
   left: 40px;
 	height: 322px;
 	width: 520px;
-	background: #fff;
+	background: #F1F2EB;
 	border-radius: 3px;
 	overflow: hidden;
 	box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
@@ -222,7 +223,7 @@ $brown: #786450;
 		img {
 			display: block;
 			border-radius: 50%;
-			background: #F5E8DF;
+			background: #F1F2EB;
 		}
 		
 		&:hover {
@@ -252,7 +253,8 @@ $brown: #786450;
 	}
 	
 	.actions {
-		margin-top: 33px;
+    margin-top: 33px;
+    color: #084C61;
 		
 		.btn {
 			display: block;
@@ -270,7 +272,7 @@ $brown: #786450;
 			
 			&:hover {
 				background: $brown;
-				color: #fff;
+				color: #F1F2EB;
 			}
 		}
 	}
@@ -286,7 +288,7 @@ $brown: #786450;
 		box-sizing: border-box;
     width: 189px;
     height: 107px;
-		background: #F5E8DF;
+		background: #D8DAD3;
 		text-align: center;
 		padding-top: 28px;
     transition: all .4s ease-in-out;
@@ -294,7 +296,7 @@ $brown: #786450;
     left: 30px;
 		
 		&:hover {
-			background: #E1CFC2;
+			background: #F1F2EB;
 			cursor: pointer;
 		}
 		
@@ -320,4 +322,209 @@ $brown: #786450;
 }
 
 
+.text-center{
+    text-align: center;
+  }
   
+  .space-bot{
+    margin-bottom: 35px;
+  }
+  
+  .space-top{
+    margin-top: 35px;
+  }
+  
+  /* Title */
+  
+  h1 {
+      color: white;
+      font-family: 'Roboto';
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 25px;
+      text-align: center;
+  }
+  
+  /* Sign Up */
+  
+  .container {
+      max-width: 400px;
+      max-height: 100px;
+      margin-top: 10px;
+  }
+  
+  .alert-danger{
+      text-align: center;
+  }
+  
+  .signup-screen {
+        padding: 20px;
+      padding-bottom: 40px;
+      border-radius: 5px;
+      background-color: #2c3940;
+      box-shadow: 0 1px 6px rgba(0,0,0,.3);
+      color: white;
+  }
+  
+  .btn{
+    border-radius: 2px;
+  }
+  
+  .cancel{
+    background-color: #df405a;
+  }
+  
+  .done{
+    background-color: #5CAB7D;
+  }
+  
+  .done:hover{
+    background-color: #6dc793;
+  }
+  
+  .done:focus{
+    background-color: #6dc793;
+  }
+  
+  .cancel:hover{
+    background-color: #f0435f;
+  }
+  
+  .cancel:focus{
+    background-color: #f0435f;
+  }
+  
+  .input-group {
+      width:100%;
+  }
+  
+  .input-group .ng-invalid {
+      border: 2px solid #e74c3c;
+      border-radius: 3px;
+  }
+  
+  /* Error Box */
+  
+  .alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    border-color: #e85a71;
+    background-color:  #e85a71;
+    color: white;
+    
+  }
+  
+  .help-block {
+      font-size: 12px;
+      color: white
+  }
+  .woow{
+          width: 360px;
+    height: px;
+        display: flex;
+      flex-direction: row;
+  
+  }
+  #caredom{
+        width: 230px;
+  
+  }
+  // the Sing Up
+
+  .register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
+}
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
