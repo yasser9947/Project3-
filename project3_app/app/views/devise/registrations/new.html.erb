@@ -36,7 +36,7 @@
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.collection_select(:city_id, City.all, :id, :name, {} ,class: "custom-select select22" ) %>
+    <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
   </div>
 
  <div class="field">
@@ -94,12 +94,12 @@
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.collection_select(:city_id, City.all, :id, :name, {} ,class: "custom-select select22" ) %>
+    <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
   </div>
 
   <div class="field">
     <%= f.label :age %><br />
-    <%= f.number_field :age %>
+    <%= f.number_field :age,  {min: 18} %>
   </div>
 
    <div class="field">
