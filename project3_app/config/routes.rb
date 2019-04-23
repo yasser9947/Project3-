@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :senior
    devise_scope :user do
     authenticated :user do
-      root 'users#home', as: :authenticated_root
+      root 'users#index', as: :authenticated_root
     end
     unauthenticated do
       root 'users#home', as: :unauthenticated_root

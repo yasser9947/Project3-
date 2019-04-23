@@ -14,8 +14,8 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="field form">
-    <%= f.hidden_field :care %>
+  <div class="form">
+    <%= f.hidden_field :care, :value => 'true' %>
     
   </div>
 
@@ -77,6 +77,10 @@
     <%= f.text_field :name %>
   </div>
 
+  <div class="field form">
+    <%= f.hidden_field :care, :value => 'false' %>
+    
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
