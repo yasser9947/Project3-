@@ -1,2 +1,43 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+<%= form_for(@request) do |f| %>
+  <p>
+    <%= f.label :name, "Request Name" %>
+    <%= f.text_field :name %>
+  </p>
+  <div class="field">
+    <%= f.label :age, "0 to 6 months" %>
+    <%= f.number_field :age,  {min: 0, max: 5} %>
+  </div>
+
+    <div class="field">
+    <%= f.label :age, "6 months to 3 years" %>
+    <%= f.number_field :age,  {min: 0, max: 5} %>
+  </div>
+    <div class="field">
+    <%= f.label :age, "3 to 6 years" %>
+    <%= f.number_field :age,  {min: 0, max: 5} %>
+  </div>
+    <div class="field">
+    <%= f.label :age, "7 years and above" %>
+    <%= f.number_field :age,  {min: 0, max: 5} %>
+  </div>
+    <div class="field">
+    <%= f.label :allergies, "Allergies if any?" %>
+    <%= f.number_field :allergies %>
+  </div>
+  <div class="field">
+    <%= f.label :date, "Choose prefered date:" %>
+    <%= f.number_field :date %>
+  </div>
+  <div>
+  <%= f.collection_check_boxes(:user_id, User.all, :id, :email) %>
+    <%# i.label %>
+    <%# i.label { i.check_box } %>
+  <% end %>
+ </div>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', requests_path %>

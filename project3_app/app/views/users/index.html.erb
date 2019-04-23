@@ -1,55 +1,40 @@
-<% if @current_user.care == true %> 
+<div class="frame">
+  <div class="center">
+    
+		<div class="profile">
+			<div class="image">
+				<div class="circle-1"></div>
+				<div class="circle-2"></div>
+				<img src="http://100dayscss.com/codepen/jessica-potter.jpg" width="70" height="70" alt="Jessica Potter">
+			</div>
+			
+			<div class="name"><%= @current_user.name %></div>
+			<div class="job"> <%= @current_user.nationality%> </div>
+			
 
-<h2> name: </h2>
-<h4><%= @current_user.name %></h4>
+			<div class="actions">
+				<button class="btn">Request Service</button>
+				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path %></button>
+                <button class="btn"> 
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                </button>
 
-<h2> phone: </h2>
- <h4><%= @current_user.phone %> </h4>
-
-<h2>nationality: </h2>
-<h4><%= @current_user.nationality%></h4>
-
-<h2>city: </h2>
-<h4><%= @current_user.city.name %> </h4>
-
-<h2>area: </h2>
-<h4><%= @current_user.area%> </h4>
-
-<h2>address: </h2>
-<h4><%= @current_user.address %> </h4>
-
-<h2> email:</h2>
- <h4><%= @current_user.email %> </h4>
-
-<h4><%  @current_user.care %> </h4>
-
-<%= link_to %>
-<% else%>   
-
-<h2> name: </h2>
-<h4><%= @current_user.name %></h4>
-
-<h2> phone: </h2>
- <h4><%= @current_user.phone %> </h4>
-
-<h2>nationality: </h2>
-<h4><%= @current_user.nationality%></h4>
-
-<h2>city: </h2>
-<h4><%= @current_user.city.name %> </h4>
-
-<h2>age: </h2>
-<h4><%= @current_user.age%> </h4>
-
-<h2>experience: </h2>
-<h4><%= @current_user.experience %> </h4>
-
-<h2>description: </h2>
-<h4><%= @current_user.description %> </h4>
-
-<h2> email:</h2>
- <h4><%= @current_user.email %> </h4>
-
-<h4><%  @current_user.care %> </h4>
-
-<%end%>
+			</div>
+		</div>
+		
+		<div class="stats">
+			<div class="box">
+				<span class="value">Email:</span>
+				<span class="parameter"><%= @current_user.email %></span>
+			</div>
+			<div class="box">
+				<span class="value">Phone:</span>
+				<span class="parameter"> <%= @current_user.phone %> </span>
+			</div>
+			<div class="box">
+				<span class="value">City:</span>
+				<span class="parameter"><%= @current_user.city.name %></span>
+			</div>
+		</div>
+  </div>
+</div>

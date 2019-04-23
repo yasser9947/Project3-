@@ -5,6 +5,7 @@
 <button type="button" class="btn btn-outline-secondary Parent">Caredom Member</button>
 <button type="button" class="btn btn-outline-secondary Nanny ">Caregiver Member</button>
  <div class = "paentDesplay">
+<div class = "frist_table">
   <div class="field form">
     <%= f.text_field :name %>
   </div>
@@ -42,6 +43,7 @@
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+</div>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
