@@ -9,11 +9,26 @@ $(function () {
     // nannyDesplay
   });
 
-
-
   $(".Parent").click(function () {
     $(".paentDesplay").css("display", "block");
     $(".nannyDesplay").css("display", "none");
+    // alert("Handle user.Parent");
+    // $('#user_care').val('true')
+  });
+
+
+
+  $(".Senior").click(function () {
+    // alert("Handle user.Nanny");
+    $(".childDesplay").css("display", "none");
+    $(".seniorDesplay").css("display", "block");
+    // $('#user_care').val('false')
+    // seniorDesplay
+  });
+
+  $(".Child").click(function () {
+    $(".childDesplay").css("display", "block");
+    $(".seniorDesplay").css("display", "none");
     // alert("Handle user.Parent");
     // $('#user_care').val('true')
   });

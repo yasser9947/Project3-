@@ -1,5 +1,3 @@
-
-
 @import 'bootstrap';
 a:hover, a:visited, a:link, a:active{
   // pointer-events: none;
@@ -14,19 +12,24 @@ body{
 // text-decoration: none;
 // }
 .select22{
-
     width: 179px;
 }
-.Parent{
+.Child{
     // display:none;
 }
-.paentDesplay{
+.childDesplay{
+}
+.seniorDesplay{
+    display:none;
+}
 
+.Parent{
+  // display:none;
+}
+.paentDesplay{
 }
 .nannyDesplay{
-    display:none;
-
-
+  display:none;
 }
 .secand_table{
     // border: 1px solid black;
@@ -34,24 +37,20 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 .frist_table{
     // border: 1px solid black;
   width: 900px;
   display: flex;
   justify-content: space-around;
-
 }
 .field{
 width: 300px;
-
 }
 .informtion{
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-
 }
 .snip1336 {
     // border: 1px solid black;

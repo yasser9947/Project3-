@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_130723) do
+ActiveRecord::Schema.define(version: 2019_04_24_081905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "children", force: :cascade do |t|
-    t.integer "num"
-    t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "Allergy"
-  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -30,8 +22,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_130723) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.integer "caredom_id"
-    t.integer "caregiver_id"
     t.integer "request_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,17 +31,10 @@ ActiveRecord::Schema.define(version: 2019_04_23_130723) do
     t.string "gender"
     t.string "explainsituation"
     t.string "note"
-    t.integer "user_id"
-  end
-
-  create_table "seniors", force: :cascade do |t|
-    t.integer "age"
-    t.string "gender"
-    t.string "explainsituation"
-    t.datetime "date"
-    t.string "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "caredom_id"
+    t.bigint "caregiver_id"
+    t.index ["caredom_id"], name: "index_requests_on_caredom_id"
+    t.index ["caregiver_id"], name: "index_requests_on_caregiver_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,8 +48,8 @@ ActiveRecord::Schema.define(version: 2019_04_23_130723) do
     t.string "name"
     t.integer "phone"
     t.string "nationality"
-    t.boolean "care"
     t.bigint "city_id"
+    t.boolean "care"
     t.string "area"
     t.string "address"
     t.integer "age"
