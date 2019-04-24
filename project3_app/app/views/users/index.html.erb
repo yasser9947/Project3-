@@ -16,7 +16,7 @@
 			<div class="actions">
 				<button class="btn"> <%= link_to 'Request Service', new_request_path, class: "brown" %></button>
 				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
-                <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
+        <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
 			</div>
 		</div>
 
@@ -54,14 +54,16 @@
       <th scope="row"><%= c.id %></th>
       <td><%= c.date %></td>
 		
-      <td><% if c.request_status == 0%>
+      <td>
+<% if c.request_status == 4%>
 
   Canceled 
     <% elsif c.request_status == 1 %>
-   pending ⏰
-<% else%>
-   accepted √
-
+   Pending ⏰
+<% elsif c.request_status == 2%>
+   Accepted √
+<%else%>
+Request
     <% end %>
 		</td>
       <td>	<% if c.request_status == 2%>
@@ -122,6 +124,22 @@ done
 			<div class="box">
 				<span class="value">City:</span>
 				<span class="parameter"><%= @current_user.city.name %></span>
+			
+		
+  
+		<div class="stats1">
+			<div class="box1">
+				<span class="value1">Age:</span>
+				<span class="parameter1"><%= @current_user.age %></span>
+			</div>
+			<div class="box1">
+				<span class="value1">Experience:</span>
+				<span class="parameter1"> <%= @current_user.experience %> </span>
+			</div>
+			<div class="box1">
+				<span class="value1">Description:</span>
+				<span class="parameter1"><%= @current_user.description %></span>
+			</div>
 			</div>
 		</div>
   </div>
@@ -141,12 +159,12 @@ done
     <tr>
       <th scope="row"><%= c.id %></th>
       <td><%= c.date %></td>
-      <td><% if c.request_status == 0%>
+      <td><% if c.request_status == 4%>
 
   Canceled 
     <% elsif c.request_status == 1 %>
    pending ⏰
-<% else%>
+<% elsif c.request_status == 2%>
    accepted √
 
     <% end %>

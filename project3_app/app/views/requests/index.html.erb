@@ -2,10 +2,14 @@
 √
  <div class = "informtion">
   <% @requests.each do |item| %>
+    <% if item.explainsituation.to_i == nil ||item.note.to_i == nil ||item.age== nil %>
+
+    <%else%>
 <figure class="snip1336">
   
   <figcaption>
     <h2>Name of Caredom <%= item.gender %> <span>Chaild</span></h2>
+  
      the Caredom has a number of children: <%= item.explainsituation.to_i  + item.age + item.note.to_i  %> 
      </br>
      Age:
@@ -40,6 +44,7 @@ In the hour: <%= data[1]%> PM
 
   </figcaption>
 </figure>
+<%end%>
 <% end %>
 
 </div>

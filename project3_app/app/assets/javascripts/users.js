@@ -99,7 +99,7 @@ $(function () {
   $(".reject").click(function () {
     let id = $(this).attr("id")
     console.log(id)
-    $.get(`${mainURL}/requests/${id}/stat/update?val=0`, function (res) {
+    $.get(`${mainURL}/requests/${id}/stat/update?val=4`, function (res) {
       console.log(res)
       console.log("yasser")
 

@@ -28,7 +28,8 @@
   <a >Logged in as  <strong ><%= current_user.email  %></strong>.</a>
       </li>
        <li class="nav-item">
-        <%= link_to "My profile", users_index_path , :class => 'nav-link'  %>
+        <a class ='nav-link' href  ="http://localhost:3000"> My Profile </a>
+      
       </li>
     
       <li class="nav-item">
@@ -64,5 +65,6 @@
 <% end %>
 
     <%= yield %>
+ 
   </body>
 </html>

@@ -1,10 +1,11 @@
-<button type="button" class="btn btn-primary child">Child-Care</button>
-<button type="button" class="btn btn-success senior">Senior-Care</button>
+
 
 <div class = "childDesplay">
 <%= form_for(@request) do |f| %>
  
 <div class= "formRequst22">
+<h2>Request A Caregaver </h2>
+
   <label class= "labelRequst">
     <p class="label-txt">0 to 6 months</p>
     <%= f.text_field :age,  :class => 'input' %>
@@ -34,7 +35,8 @@
     </div>
   </label>
    <label  class= "labelRequst">
-    <%= f.datetime_field :date %>
+    <p class="label-txt">Data & Time</p>
+    <%= f.datetime_field :date  %>
     <div class="line-box">
       <div class="line"></div>
     </div>
@@ -53,31 +55,3 @@
   <%= link_to 'Back', requests_path %>
 </div>
 
-<div class = "seniorDesplay">
-<%= form_for(@request) do |f| %>
-  <div class="field">
-    <%= f.label :age, "Age:" %>
-    <%= f.number_field :age,  {min: 18} %>
-      </div>
-    <div class="field">
-    <%= f.label :gender, "Gender:" %>
-    <%= f.text_field :gender %>
-        </div>
-    <div class="field">
-    <%= f.label :explainsituation, "Explain situation:" %>
-    <%= f.text_field :explainsituation %>
-  </div>
-  <div class="field">
-    <%= f.label :note, "Note:" %>
-    <%= f.text_field :note %>
-  </div>
- <div class="field">
-    <%= f.label :date, "Choose prefered date and time:" %>
-    <%= f.datetime_field :date %>
-  </div>
-  <h5>
-    <%= f.submit 'Create Request' %>
-  </h5>
-  <% end %>
-  <%= link_to 'Back', requests_path %>
-</div>

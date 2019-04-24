@@ -26,5 +26,4 @@ $(function () {
     $(".childDesplay").css("display", "none");
   });
 
-
 })
