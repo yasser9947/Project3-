@@ -61,4 +61,19 @@ $(function () {
     $(target).fadeIn(600);
     
   });
+
+  // api
+  let continr = document.querySelector(".snip1336")
+
+  axios({
+      method : 'get',
+  url : 'https://source.unsplash.com/user/erondu'
+  
+  
+  })
+  .then(res =>{
+    continr.innerHTML +=`<img src="" alt="">`
+
+  })
+
 })

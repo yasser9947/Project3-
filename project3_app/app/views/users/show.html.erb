@@ -2,14 +2,13 @@
   <% @user.each do |item| %>
 
 <figure class="snip1336">
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+  <img src="https://source.unsplash.com/user/erondu" alt="sample87" />
   <figcaption>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
     <h2><%=item.name%><span><%=item.age%></span></h2>
     <p> <%= item.description %> <%= item.nationality %> </p>
     <p> <%= item.phone %> <%= item.description %> </p>
 
-    <a href="#" class="follow">Follow</a>
+    <a href="#" class="follow">request</a>
     <a href="#" class="info">More Info</a>
   </figcaption>
 </figure>
