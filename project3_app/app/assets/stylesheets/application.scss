@@ -1,5 +1,4 @@
 @import 'bootstrap';
-
 a:hover, a:visited, a:link, a:active{
   // pointer-events: none;
   text-decoration: none;
@@ -25,11 +24,15 @@ body{
 //             box-sizing: border-box;
 //             transition: all .3s ease-in-out;
 //             color: $brown;
-//   &:hover {
-//       background: $brown;
-//       color: #F1F2EB;
-//   }
+//             &:hover {
+//                 background: $brown;
+//                 color: #F1F2EB;
+//             }
 // }
+footer{
+  text-align: center;
+}
+
 .select22{
     width: 179px;
 }
