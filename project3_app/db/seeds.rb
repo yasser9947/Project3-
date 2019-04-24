@@ -67,6 +67,3 @@ City.create(name: 'Al-Ula')
 City.create(name: 'Abqaiq')
 City.create(name: 'Badr Hunayn')
 City.create(name: 'Samitah')
-
-
-

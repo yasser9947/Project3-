@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_130723) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "children", force: :cascade do |t|
-    t.integer "num"
-    t.datetime "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "Allergy"
-  end
-
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -44,16 +36,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_130723) do
     t.integer "user_id"
   end
 
-  create_table "seniors", force: :cascade do |t|
-    t.integer "age"
-    t.string "gender"
-    t.string "explainsituation"
-    t.datetime "date"
-    t.string "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -65,8 +47,8 @@ ActiveRecord::Schema.define(version: 2019_04_23_130723) do
     t.string "name"
     t.integer "phone"
     t.string "nationality"
-    t.boolean "care"
     t.bigint "city_id"
+    t.boolean "care"
     t.string "area"
     t.string "address"
     t.integer "age"

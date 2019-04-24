@@ -1,9 +1,11 @@
-
 <div class = "childDesplay">
 <%= form_for(@request) do |f| %>
   <h1>
     <%= f.label :name, "Child care" %>
   </h1>
+  <h5><%= f.label :name, "Age" %>  <%= f.label :name , "Number"%> </h5>
+  
+  </div>
   <div class="field">
     <%= f.label :age, "0 to 6 months" %>
     <%= f.number_field :age,  {min: 0, max: 5} %>
@@ -73,5 +75,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', requests_path %>
+<%= link_to 'Back', requests_path  %>
 </div>

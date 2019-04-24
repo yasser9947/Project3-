@@ -28,8 +28,6 @@
     <%= f.text_field :area %>
   </div>
 
-
-
   <div class="field">
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -99,9 +97,8 @@
 <div class=" register">
                 <div class="row">
                     <div class="col-md-3 register-left">
-                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <img src="https://i.ibb.co/hWwBP8N/logo.png" alt=""/>
                         <h3>Welcome</h3>
-                        <p>You are 30 seconds away from earning your own money!</p>
                         <input type="submit" name="" value="Login"/><br/>
                     </div>
                     <div class="col-md-9 register-right">
@@ -150,7 +147,7 @@
                                        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                                         </div>
                                         <div class="form-group">
-    <%= f.text_field :nationality %>
+                                        <%= f.text_field :nationality %>
                                         </div>
                                         <div class="form-group">
                                              <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
@@ -168,7 +165,7 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="Name *" value="" />
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Last Name *" value="" />
@@ -180,7 +177,6 @@
                                             <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
                                         </div>
 
-
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -189,17 +185,6 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                                <option>What is your Birthdate?</option>
-                                                <option>What is Your old Phone Number</option>
-                                                <option>What is your Pet Name?</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                        </div>
                                         <input type="submit" class="btnRegister"  value="Register"/>
                                     </div>
                                 </div>
@@ -207,6 +192,5 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 <% end %>

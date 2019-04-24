@@ -1,32 +1,35 @@
-
-
 @import 'bootstrap';
 a:hover, a:visited, a:link, a:active{
   // pointer-events: none;
   text-decoration: none;
-color: #786450;
+color: #F1F2EB;
 }
 
 body{
-  background-color: #F5E8DF;
+  background-color: #D8DAD3;
 }
 // .navbar-link{
 // text-decoration: none;
 // }
 .select22{
-
     width: 179px;
 }
-.Parent{
+.Child{
     // display:none;
 }
-.paentDesplay{
+.childDesplay{
+}
+.seniorDesplay{
+    display:none;
+}
 
+.Parent{
+  // display:none;
+}
+.paentDesplay{
 }
 .nannyDesplay{
-    display:none;
-
-
+  display:none;
 }
 .secand_table{
     // border: 1px solid black;
@@ -34,24 +37,20 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 .frist_table{
     // border: 1px solid black;
   width: 900px;
   display: flex;
   justify-content: space-around;
-
 }
 .field{
 width: 300px;
-
 }
 .informtion{
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-
 }
 .snip1336 {
     // border: 1px solid black;
@@ -62,7 +61,7 @@ width: 300px;
     min-width: 230px;
     max-width: 315px;
     width: 100%;
-    color: #ffffff;
+    color: #F1F2EB;
     text-align: left;
     line-height: 1.4em;
     background-color: #141414;
@@ -97,8 +96,8 @@ width: 300px;
   }
   .snip1336 figcaption a {
     padding: 5px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    border: 1px solid #F1F2EB;
+    color: #F1F2EB;
     font-size: 0.7em;
     text-transform: uppercase;
     margin: 10px 0;
@@ -148,8 +147,9 @@ width: 300px;
 /////////////////////////////////////////////Parent profile styling
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
-$brown: #786450;
-
+$brown: #084C61;
+.brown{ color: $brown !important;}
+.brown:hover { color: #fff !important;}
 .frame {
   position: absolute;
   top: 50%;
@@ -161,10 +161,10 @@ $brown: #786450;
   border-radius: 2px;
   box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
 	background: #CA7C4E;
-  background: -webkit-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
-  background: -moz-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
-  background: -o-linear-gradient(bottom left, #EEBE6C 0%, #CA7C4E 100%);
-  background: linear-gradient(to top right, #EEBE6C 0%, #CA7C4E 100%); 
+  background: -webkit-linear-gradient(bottom left, #D8DAD3 0%, #628395 100%);
+  background: -moz-linear-gradient(bottom left, #D8DAD3 0%, #628395 100%);
+  background: -o-linear-gradient(bottom left, #D8DAD3 0%, #628395 100%);
+  background: linear-gradient(to top right, #D8DAD3 0%, #628395 100%); 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEBE6C', endColorstr='#CA7C4E',GradientType=1 ); 
   color: $brown;
 	font-family: 'Open Sans', Helvetica, sans-serif;
@@ -178,7 +178,7 @@ $brown: #786450;
   left: 40px;
 	height: 322px;
 	width: 520px;
-	background: #fff;
+	background: #F1F2EB;
 	border-radius: 3px;
 	overflow: hidden;
 	box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
@@ -222,7 +222,7 @@ $brown: #786450;
 		img {
 			display: block;
 			border-radius: 50%;
-			background: #F5E8DF;
+			background: #F1F2EB;
 		}
 		
 		&:hover {
@@ -252,7 +252,8 @@ $brown: #786450;
 	}
 	
 	.actions {
-		margin-top: 33px;
+    margin-top: 33px;
+    color: #084C61;
 		
 		.btn {
 			display: block;
@@ -270,7 +271,7 @@ $brown: #786450;
 			
 			&:hover {
 				background: $brown;
-				color: #fff;
+				color: #F1F2EB;
 			}
 		}
 	}
@@ -286,7 +287,7 @@ $brown: #786450;
 		box-sizing: border-box;
     width: 189px;
     height: 107px;
-		background: #F5E8DF;
+		background: #D8DAD3;
 		text-align: center;
 		padding-top: 28px;
     transition: all .4s ease-in-out;
@@ -294,7 +295,7 @@ $brown: #786450;
     left: 30px;
 		
 		&:hover {
-			background: #E1CFC2;
+			background: #F1F2EB;
 			cursor: pointer;
 		}
 		
