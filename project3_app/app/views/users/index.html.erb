@@ -13,14 +13,13 @@
 			<div class="name"><%= @current_user.name %></div>
 			<div class="job"> <%= @current_user.nationality%> </div>
 			
-
 			<div class="actions">
 				<button class="btn"> <%= link_to 'Request Service', new_request_path, class: "brown" %></button>
 				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
                 <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
 			</div>
 		</div>
-		
+
 		<div class="stats">
 			<div class="box">
 				<span class="value">Email:</span>
