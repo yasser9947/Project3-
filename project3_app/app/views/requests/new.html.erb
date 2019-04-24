@@ -1,3 +1,6 @@
+<button type="button" class="btn btn-primary child">Child-Care</button>
+<button type="button" class="btn btn-success senior">Senior-Care</button>
+
 <div class = "childDesplay">
 <%= form_for(@request) do |f| %>
  
@@ -14,18 +17,16 @@
     <%= f.label :date, "Choose prefered date:" %>
     <%= f.date_field :date %>
   </div>
-  <div>
-  <p>
+  
+  <h3>
     <%= f.submit 'Create Request' %>
-  </p> 
+  </h3> 
    <% end %>
-<%= link_to 'Back', requests_path %>
-
+  <%= link_to 'Back', requests_path %>
 </div>
 
-
-<%= simple_form_for @request do |f| %>
-  <%= f.input :age %>
-  <%= f.input :allergies %>
-  <%= f.button :submit %>
-<% end %>
+<%#= simple_form_for @request do |f| %>
+  <%#= f.input :age %>
+  <%#= f.input :allergies %>
+  <%#= f.button :submit %>
+<%# end %>
