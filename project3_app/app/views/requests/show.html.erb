@@ -1,4 +1,5 @@
-<h1>Request Caregiver for Child-Care</h1>
+<div class = "childDesplay">
+<h1>Requested Caregiver for Child-Care</h1>
 
 <table>
     <tr>
@@ -16,5 +17,36 @@
         <tr>
         <td>   <h2>7 years and above:<%=@request.age4%></td></h2>
         </tr>
+        <tr>
+        <td>   <h2>Allergies:<%=@request.allergies%></td></h2>
+        </tr>
+        <tr>
+        <td>   <h2>Date and Time:<%=@request.date%></td></h2>
+        </tr>
 </table>
+</div>
 
+<div class = "seniorDesplay">
+<h1>Requested Caregiver for Senior-Care</h1>
+
+<table>
+    <tr>
+    <h4>The senior information that needs caregiver help:</h4>
+    </tr>
+        <tr>
+        <td>   <h2>Senior age:<%=@request.age%></td></h2>
+        </tr>
+        <tr>
+        <td>   <h2>Gender:<%=@request.gender%></td></h2>
+        </tr>
+        <tr>
+        <td>   <h2>Situation:<%=@request.explainsituation%></td></h2>
+        </tr>
+        <tr>
+        <td>   <h2>Note:<%=@request.note%></td></h2>
+        </tr>
+        <tr>
+        <td>   <h2>Date and Time:<%=@request.date%></td></h2>
+        </tr>
+</table>
+</div>

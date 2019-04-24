@@ -1,4 +1,5 @@
 @import 'bootstrap';
+
 a:hover, a:visited, a:link, a:active{
   // pointer-events: none;
   text-decoration: none;
@@ -10,6 +11,24 @@ body{
 }
 // .navbar-link{
 // text-decoration: none;
+// }
+// .updatebrownbutton{
+//   display: block;
+//             width: 120px;
+//             height: 30px;
+//             margin: 0 auto 10px auto;
+//             background: none;
+//             border: 1px solid $brown;
+//             border-radius: 15px;
+//             font-size: 12px;
+//             font-weight: 600;
+//             box-sizing: border-box;
+//             transition: all .3s ease-in-out;
+//             color: $brown;
+//   &:hover {
+//       background: $brown;
+//       color: #F1F2EB;
+//   }
 // }
 .select22{
     width: 179px;
