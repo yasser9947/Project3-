@@ -1,3 +1,7 @@
+
+<button type="button" class="btn btn-primary child">child</button>
+<button type="button" class="btn btn-success senior">senior</button>
+
 <div class = "childDesplay">
 <%= form_for(@request) do |f| %>
  
@@ -14,7 +18,7 @@
     <%= f.label :date, "Choose prefered date:" %>
     <%= f.date_field :date %>
   </div>
-  <div>
+
   <p>
     <%= f.submit 'Create Request' %>
   </p> 
