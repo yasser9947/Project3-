@@ -14,7 +14,12 @@
 			<div class="job"> <%= @current_user.nationality%> </div>
 			
 			<div class="actions">
+<<<<<<< HEAD
 				<button class="btn"> <%= link_to 'Request Service', new_request_path, class: "brown" %></button>
+=======
+
+				<button class="btn"> <%= link_to 'Request Service', requests_path, class: "brown" %></button>
+>>>>>>> 5c8f84b2fdf02ff1ea7c377e449d393dd418d08f
 				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
                 <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
 			</div>
