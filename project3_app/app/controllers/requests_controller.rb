@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
     p @request.errors.full_messages
     puts current_user.id
     @request.save
-    # redirect_to request_path(@request)
+    # redirect_to request
   end
  
   def show
