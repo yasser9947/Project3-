@@ -1,100 +1,12 @@
 
-<h2>Sign up</h2>
-<%= @name %>
-<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<button type="button" class="btn btn-outline-secondary Parent">Caredom Member</button>
-<button type="button" class="btn btn-outline-secondary Nanny ">Caregiver Member</button>
- <div class = "paentDesplay">
-<div class = "frist_table">
-  <div class="field form">
-    <%= f.text_field :name %>
-  </div>
-  <div class="form">
-    <%= f.hidden_field :care, :value => 'true' %>
-    
-  <div class="field">
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
-  </div>
-  <div class="field">
-    <%= f.text_field :nationality %>
-  </div>
 
-  <div class="field">
-   <%= f.label :area %><br />
-    <%= f.text_field :area %>
-  </div>
 
-  <div class="field">
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-</div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-</div>
-
-<div class = "nannyDesplay">
-<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field form">
-    <%= f.text_field :name %>
-  </div>
-  <div class="field form">
-    <%= f.hidden_field :care, :value => 'false' %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-  <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
-  </div>
-  <div class="field">
-    <%= f.text_field :nationality %>
-  </div>
-  <div class="field">
-    <%= f.number_field :age,  {min: 18} %>
-  </div>
-   <div class="field">
-    <%= f.text_field :experience %>
-  </div>
-  <div class="field">
-    <%= f.text_field :description %>
-  </div>
-   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-</div>
-</div>
 <%# Sing Up %>
-<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
 <div class=" register">
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
                 <div class="row">
                     <div class="col-md-3 register-left">
                         <img src="https://i.ibb.co/hWwBP8N/logo.png" alt=""/>
@@ -104,14 +16,14 @@
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Caredom</a>
+                                <a class="nav-link active Parent " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Caredom</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Caregiver</a>
+                                <a class="nav-link Nanny" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Caregiver</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active paentDesplay" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Apply as a Employee</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
@@ -141,13 +53,18 @@
                                                 </label>
                                             </div>
                                         </div>
+
                                     </div>
+
+
                                     <div class="col-md-6">
+                                    
+
                                         <div class="form-group">
                                        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                                         </div>
                                         <div class="form-group">
-                                        <%= f.text_field :nationality %>
+                                         <%= f.text_field :nationality %>
                                         </div>
                                         <div class="form-group">
                                              <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
@@ -156,36 +73,58 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                 <%= f.submit "Sign up" , class:"btnRegister"  %>
                                     </div>
+                                                                                                                                                    <%end%>
+
                                 </div>
                             </div>
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+      
+                            <div class="tab-pane fade show nannyDesplay" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Apply as a Hirer</h3>
                                 <div class="row register-form">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6">                                    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name *" value="" />
+    <%= f.text_field :name %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+    <%= f.text_field :phone %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+    <%= f.text_field :nationality %>
                                         </div>
+ <div class="field form">
+    <%= f.hidden_field :care, :value => 'false' %>
+  </div>
 
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+ <% if @minimum_password_length %>
+  
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password" %>                                        </div>
+                                        <div class="form-group">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                             <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
+
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                        <div class="form-group">
+                                    <%= f.number_field :age,  {min: 18} %>
+                                        </div>
+ <div class="form-group">
+                                            <%= f.text_field :experience %>
+                                        </div>
+
+                                         <%= f.submit "Sign up" , class: "btnRegister" %>
+
                                     </div>
                                 </div>
                             </div>
