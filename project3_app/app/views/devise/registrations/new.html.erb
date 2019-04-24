@@ -1,3 +1,49 @@
+Bootstrap CSS
+<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+<div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        	<br />
+        	<div class="card-columns">
+	        	<div class="card" style="max-width:319px;">
+
+	        		<div class="card-block text-right">
+                    	<img src="https://i.ibb.co/hWwBP8N/logo.png" class="card-img-top" alt="Card image" />
+	        			<h4 class="card-title">About US</h4>
+	        			<p class="card-text">Caredom is company that offers services for family member specifically for family, to manage their needs with their kids or senior care. The name Caredom came from Care as;caring and the dom; for the kingdom of Saudi Arabia.</p>
+	        			<button class="btn"><%= link_to "More", :class => 'navbar-link', class: "brown" %></button>
+	        		</div>
+	        	</div>
+
+	        	<div class="card" style="max-width:319px;">
+	        		<img src="https://i.ibb.co/hWwBP8N/logo.png" class="card-img-top" alt="Card image" />
+	        		<div class="card-block text-right">
+	        			<h4 class="card-title">Contact US</h4>
+	        			<p class="card-text">Caredom will avaiable to answer all your question and concerns 24/7. <br/> name: Cardom manager "Abdullah" <br/> Phone: +966 555555555 <br/> Email: info@caredom.con<br/> name: Cardom Assistant "Nouf" <br/> Phone: +966 555555555 <br/> Email: assist@caredom.con</p>
+	        			<button class="btn"><%= link_to "More", :class => 'navbar-link', class: "brown" %></button>
+	        		</div>
+	        	</div>
+
+	        	<div class="card" style="max-width:319px;">
+                    <img src="https://i.ibb.co/hWwBP8N/logo.png" class="card-img-top" alt="Card image" />
+	        		<div class="card-block text-right">
+	        			<h4 class="card-title">Registration</h4>
+                        <p class="card-text">Signup to register to benefit from our Caredom service.</p>
+	        			<button class="btn"><%= link_to "Register",  :class => 'navbar-link', class: "brown" %></button>
+
+	        		</div>
+	        	</div>
+        	</div>
+        </div>
+      </div>
+    </div>
+
+<div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
 
   <%= render "devise/shared/error_messages", resource: resource %>
 

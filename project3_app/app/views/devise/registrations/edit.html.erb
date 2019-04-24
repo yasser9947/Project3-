@@ -67,8 +67,7 @@
 
 			<div class="actions">
 			
-        <button class="btn"> <%= link_to 'UPDATE link', user_registration_path, method: :put, class: "brown" %></button>
-        <button class="btn"> <%= f.submit "Update", class: "brown" %></button>
+        <%= f.submit "Update", :class => 'brown btn btn-primary' %>
         <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
 			</div>
 		</div>
