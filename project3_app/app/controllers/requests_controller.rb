@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
     puts params
     @request = Request.create(request_params)
     @request.caredom_id = current_user.id
-    @request.caregiver_id = current_user.id
+    @request.caregiver_id = 1
     # @request.request_status = 0 
     # @request.gender = "male", 
     # @request.explainsituation = "test" 
