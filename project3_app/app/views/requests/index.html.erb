@@ -2,6 +2,8 @@
 <p>Find me in app/views/requests/index.html.erb</p>
 <% @requests.each do |r| %>
 <li>
-<%= r.age %>
+<%= link_to r.age , request_path(r.id) %>
+CARE ID : <%=  r.caregiver_id %>
+
 </li>
 <% end %>
