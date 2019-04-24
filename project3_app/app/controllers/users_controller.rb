@@ -27,6 +27,13 @@ current_user
   end
   def update
   end
+  def stat_update
+    @request = Request.find(params[:id])
+    @request.request_status = 1
+    @request.save
+
+    # must return msg or boolean
+  end
 
   private
     def user_params

@@ -1,9 +1,27 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
-<% @requests.each do |r| %>
-<li>
-<%= link_to r.age , request_path(r.id) %>
-CARE ID : <%=  r.caregiver_id %>
 
-</li>
+
+ <div class = "informtion">
+  <% @requests.each do |item| %>
+<figure class="snip1336">
+  <img src="https://source.unsplash.com/user/erondu" alt="sample87" />
+  <figcaption>
+    <h2><%=item.age%><span><%=item.age%></span></h2>
+    <p> <%= item.allergies %> <%= item.date %> </p>
+    <p> <%= item.gender %> <%= item.explainsituation %> </p>
+    <p><%=item.note %> <p>
+<% if item.request_status == 0%>
+
+    <a   class="follow foo" id="<%=item.id %>">Request </a>
+   
+    <% elsif item.request_status == 1 %>
+    <a  class="follow bool" id="<%=item.id %>">hanging ⏰</a>
+<% else%>
+    <a class="follow sool">taken </a>
+
+    <% end %>
+
+  </figcaption>
+</figure>
 <% end %>
+
+</div>
