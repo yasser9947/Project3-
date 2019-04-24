@@ -8,7 +8,7 @@ class RequestsController < ApplicationController
   end
 
   def create
-    # puts params
+    puts params
     @request = Request.create(request_params)
     @request.caredom_id = current_user.id
     @request.caregiver_id = current_user.id
@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
     p @request.errors.full_messages
     puts current_user.id
     @request.save
-    # redirect_to request
+    redirect_to @request
   end
  
   def show
@@ -35,7 +35,7 @@ class RequestsController < ApplicationController
 
     private
     def request_params
-      params.require(:request).permit( :age, :gender, :note, :request_status, :explainsituation, :allergies, :date, :caredom_id)
+      params.require(:request).permit(:age, :gender, :note, :request_status, :explainsituation, :allergies, :date, :caregiver_id, :caredom_id)
     end
 end
 
