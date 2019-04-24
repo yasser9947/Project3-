@@ -431,13 +431,13 @@ $brown: #084C61;
     border-radius: 2px;
     border-color: #e85a71;
     background-color:  #e85a71;
-    color: white;
+    color: #F1F2EB;
     
   }
   
   .help-block {
       font-size: 12px;
-      color: white
+      color: #F1F2EB;
   }
   .woow{
           width: 360px;
@@ -459,7 +459,7 @@ $brown: #084C61;
 }
 .register-left{
     text-align: center;
-    color: #fff;
+    color: #F1F2EB;
     margin-top: 4%;
 }
 .register-left input{
@@ -467,7 +467,7 @@ $brown: #084C61;
     border-radius: 1.5rem;
     padding: 2%;
     width: 60%;
-    background: #f8f9fa;
+    background: #F1F2EB;
     font-weight: bold;
     color: #084C61;
     margin-top: 30%;
@@ -475,7 +475,7 @@ $brown: #084C61;
     cursor: pointer;
 }
 .register-right{
-    background: #f8f9fa;
+    background: #F1F2EB;
     border-top-left-radius: 10% 50%;
     border-bottom-left-radius: 10% 50%;
 }
@@ -509,16 +509,16 @@ $brown: #084C61;
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
-    background: #0062cc;
-    color: #fff;
+    background: #084C61;
+    color: #F1F2EB;
     font-weight: 600;
-    width: 50%;
+    width: 80%;
     cursor: pointer;
 }
 .register .nav-tabs{
     margin-top: 3%;
     border: none;
-    background: #0062cc;
+    background: #084C61;
     border-radius: 1.5rem;
     width: 28%;
     float: right;
@@ -527,7 +527,7 @@ $brown: #084C61;
     padding: 2%;
     height: 34px;
     font-weight: 600;
-    color: #fff;
+    color: #F1F2EB;
     border-top-right-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
 }
@@ -536,8 +536,8 @@ $brown: #084C61;
 }
 .register .nav-tabs .nav-link.active{
     width: 100px;
-    color: #0062cc;
-    border: 2px solid #0062cc;
+    color: #084C61;
+    border: 2px solid #084C61;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
 }
