@@ -16,7 +16,7 @@
 #     City.create(city)
 # end
 City.destroy_all
-
+Request.destroy_all
 City.create(name: 'Riyadh')
 City.create(name: 'Az Zulfi')
 City.create(name: 'Jeddah')

@@ -4,45 +4,45 @@
 <div class = "childDesplay">
 <%= form_for(@request) do |f| %>
  
-<form>
-  <label>
+<div class= "formRequst22">
+  <label class= "labelRequst">
     <p class="label-txt">0 to 6 months</p>
     <%= f.text_field :age,  :class => 'input' %>
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
-    <label>
+    <label  class= "labelRequst">
     <p class="label-txt">6 months to 3 years</p>
-    <%= f.number_field :age2, :class => 'input' %>
+    <%= f.number_field :explainsituation, :class => 'input' %>
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
-  <label>
+  <label  class= "labelRequst">
     <p class="label-txt">3 to 7 years</p>
-    <%= f.number_field :age2, :class => 'input' %>
+    <%= f.number_field :note, :class => 'input' %>
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
-  <label>
+  <label  class= "labelRequst">
     <p class="label-txt">Allergies if any?</p>
     <%= f.text_field :allergies ,:class => 'input'  %>
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
-   <label>
+   <label  class= "labelRequst">
     <%= f.datetime_field :date %>
     <div class="line-box">
       <div class="line"></div>
     </div>
-  </label>
+  </label >
   
    <%= f.submit 'Create Request' , class: "submit" %>
  
-</form>
+</div>
 
 
 

@@ -36,6 +36,54 @@
 		</div>
   </div>
 </div>
+
+
+<table class="table table17 ">
+  <thead>
+    <tr>
+      <th scope="col">N.requst</th>
+      <th scope="col">Data & Time</th>
+      <th scope="col">Status</th>
+			 <th scope="col">Status</th>
+      <th scope="col">Caregiver</th>
+    </tr><% @current_user.caredoms.each do |c| %>
+	
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= c.id %></th>
+      <td><%= c.date %></td>
+		
+      <td><% if c.request_status == 0%>
+
+  Canceled 
+    <% elsif c.request_status == 1 %>
+   pending ⏰
+<% else%>
+   accepted √
+
+    <% end %>
+		</td>
+      <td>	<% if c.request_status == 2%>
+done
+
+			<%elsif c.request_status == 1 %>
+			<div class = "shooweng">
+					<button type="button" id = <%=c.id %> class="btn btn-success accept">accept</button>
+
+			<button type="button" id = <%=c.id %> class="btn btn-danger reject">reject</button>
+     </div>
+		 </td>
+		    
+		 <%end%>
+			<td> <%= c.name %> </td>
+    </tr>
+  
+		<% end %>
+
+  </tbody>
+</table>
+
 <% else %>
 
 <h1> Welcome to Caredom! you signed up as a Caregiver member. </h1>
@@ -56,7 +104,7 @@
 			
 
 			<div class="actions">
-				<button class="btn"> <%= link_to 'Request Service', new_request_path, class: "brown" %></button>
+				<button class="btn"> <%= link_to 'Request Service', requests_path, class: "brown" %></button>
 				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
                 <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
 			</div>
@@ -78,19 +126,15 @@
 		</div>
   </div>
 </div>
-<% end%>
-
-
-
-
 <table class="table table17 ">
   <thead>
     <tr>
       <th scope="col">N.requst</th>
       <th scope="col">Data & Time</th>
       <th scope="col">Status</th>
-      <th scope="col">Status</th>
-    </tr><% @current_user.caredoms.each do |c| %>
+      <th scope="col">the details
+</th>
+    </tr><% @current_user.caregivers.each do |c| %>
 	
   </thead>
   <tbody>
@@ -99,18 +143,17 @@
       <td><%= c.date %></td>
       <td><% if c.request_status == 0%>
 
-  Request 
+  Canceled 
     <% elsif c.request_status == 1 %>
-   hanging ⏰
+   pending ⏰
 <% else%>
-   taken 
+   accepted √
 
     <% end %>
 		</td>
+		<% s = "/requests/"+c.id.to_s%>
       <td>
-					<button type="button" id = <%=c.id %> class="btn btn-success accept">accept</button>
-
-			<button type="button" id = <%=c.id %> class="btn btn-danger reject">reject</button>
+		    <a href =<%= s%>> click </a>
 
 			</td>
     </tr>
@@ -119,3 +162,10 @@
 
   </tbody>
 </table>
+
+<% end%>
+
+
+
+		
+

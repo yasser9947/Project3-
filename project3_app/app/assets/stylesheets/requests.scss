@@ -1,13 +1,14 @@
-// Place all the styles related to the Requests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the Requests controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .seniorDesplay{
     display: none;
     border: 1px solid black;
 }
 
-form {
+.formRequst22{
+    border: 1px solid black;
     width: 60%;
     margin: 60px auto;
     background: #efefef;
@@ -16,12 +17,12 @@ form {
     -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
     box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   }
-  label {
+  .labelRequst {
     display: block;
     position: relative;
     margin: 40px 0px;
   }
-  .label-txt {
+  .labelRequst-txt {
     position: absolute;
     top: -1.6em;
     padding: 10px;

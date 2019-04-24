@@ -1,29 +1,41 @@
-<h1>Request Caregiver for Child-Care</h1>
+<div class = "informtion">
+<figure class="snip1336">
+  
+  <figcaption>
+    <h2>Name of Caredom <%= @request.gender %> <span>Chaild</span></h2>
+     the Caredom has a number of children: <%= @request.explainsituation.to_i  + @request.age + @request.note.to_i  %> 
+     </br>
+     Age:
+      </br>
+    0 to 6 months : <%= @request.age%>
+ </br>
+    6 months to 3 years : <%=@request.explainsituation %>
+     </br>
+    3 to 7 years : <%=@request.note %> 
+</br>
+<% data= @request.date.to_s.split(" ")%>
+in a day :<%= data[0]%>
+</br>
+allergies : <%= @request.allergies %>
+</br>
 
-<table>
-<tr>
- <h4>The number of childen on category you'll be be help with:</h4>
-</tr>
-    <tr>
-     <td>   <h2>0 to 6 months m<%=@request.age%>m</td></h2>
-    </tr>
-    <tr>
-     <td>   <h2>6 months to 3 years<%=@request.age2%>m</td></h2>
-    </tr>
-    <tr>
-     <td>   <h2>3 to 7 years<%=@request.age3%>m</td></h2>
-    </tr>
-    <tr>
-     <td>   <h2>7 years and above<%=@request.age4%>m</td></h2>
-    </tr>
-    <tr>
-        <h2><td> <%=@request.age2%></td></h2>
-    </tr>
-     <tr>
-        <h2><td> <%=@request.age3%></td></h2>
-    </tr>
-     <tr>
-        <h2>7 years and above<td>yoyo<%=@request.age4%></td></h2>
-    </tr>
-</table>
+In the hour: <%= data[1]%> PM
+</p>
 
+    <p>   </p>
+  
+<% if @request.request_status == 0%>
+
+    <a class="follow foo" id="<%=@request.id %>">Request </a>
+   
+    <% elsif @request.request_status == 1 %>
+    <a  class="follow bool" id="<%=@request.id %>">hanging ⏰</a>
+<% else%>
+    <a class="follow sool">taken </a>
+
+    <% end %>
+
+  </figcaption>
+</figure>
+
+</div>

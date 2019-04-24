@@ -16,6 +16,7 @@ $(function () {
     $.get(`http://localhost:3000/requests/${id}/stat/update?val=1`, function (res) {
       console.log(res)
     })
+    
     $(this).text("hanging ⏰");
 
   });

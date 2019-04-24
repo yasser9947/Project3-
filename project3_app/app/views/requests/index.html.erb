@@ -1,17 +1,35 @@
 
-
+√
  <div class = "informtion">
   <% @requests.each do |item| %>
 <figure class="snip1336">
-  <img src="https://source.unsplash.com/user/erondu" alt="sample87" />
+  
   <figcaption>
-    <h2><%=item.age%><span><%=item.age%></span></h2>
-    <p> <%= item.allergies %> <%= item.date %> </p>
-    <p> <%= item.gender %> <%= item.explainsituation %> </p>
-    <p><%=item.note %> <p>
+    <h2>Name of Caredom <%= item.gender %> <span>Chaild</span></h2>
+     the Caredom has a number of children: <%= item.explainsituation.to_i  + item.age + item.note.to_i  %> 
+     </br>
+     Age:
+      </br>
+    0 to 6 months : <%= item.age%>
+ </br>
+    6 months to 3 years : <%=item.explainsituation %>
+     </br>
+    3 to 7 years : <%=item.note %> 
+</br>
+<% data= item.date.to_s.split(" ")%>
+in a day :<%= data[0]%>
+</br>
+allergies : <%= item.allergies %>
+</br>
+
+In the hour: <%= data[1]%> PM
+</p>
+
+    <p>   </p>
+  
 <% if item.request_status == 0%>
 
-    <a   class="follow foo" id="<%=item.id %>">Request </a>
+    <a class="follow foo" id="<%=item.id %>">Request </a>
    
     <% elsif item.request_status == 1 %>
     <a  class="follow bool" id="<%=item.id %>">hanging ⏰</a>

@@ -89,10 +89,11 @@ $(function () {
   $(".accept").click(function () {
     let id = $(this).attr("id")
     console.log(id)
+
     $.get(`${mainURL}/requests/${id}/stat/update?val=2`, function (res) {
       console.log(res)
     })
-    $(this).text("hanging ⏰");
+    $(".shooweng").addClass('hiddeng').removeClass('shooweng');
 
   });
   $(".reject").click(function () {
@@ -103,8 +104,9 @@ $(function () {
       console.log("yasser")
 
     })
-    $(this).text("hanging ⏰");
+    
     console.log("yasser")
+    $(".shooweng").addClass('hiddeng').removeClass('shooweng');
 
   });
 

@@ -3,6 +3,7 @@
 class RequestsController < ApplicationController
   def index
     @requests = Request.all
+    
   end
 
   def new
@@ -15,6 +16,7 @@ class RequestsController < ApplicationController
     @request.caredom_id = current_user.id
     @request.caregiver_id = current_user.id
     @request.request_status = 0
+    @request.gender = current_user.name
     # @request.request_status = 0
     # @request.gender = "male",
     # @request.explainsituation = "test"
@@ -39,6 +41,10 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     # p params[:val]
     @request.request_status = params[:val]
+    if @request.caregiver_id ==  @request.caredom_id
+    @request.caregiver_id = current_user.id
+    @request.name = current_user.name
+    end
     @request.save
 
     # must return msg or boolean

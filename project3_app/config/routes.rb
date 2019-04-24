@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :requests
   devise_scope :user do
     authenticated :user do
+      get 'users/home'
+      get 'users/index'
       root 'users#index', as: :authenticated_root
     end
     unauthenticated do
