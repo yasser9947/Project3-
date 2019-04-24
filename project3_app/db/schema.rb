@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_081905) do
+ActiveRecord::Schema.define(version: 2019_04_24_101516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 2019_04_24_081905) do
     t.string "note"
     t.bigint "caredom_id"
     t.bigint "caregiver_id"
+    t.integer "age2"
+    t.integer "age3"
+    t.integer "age4"
     t.index ["caredom_id"], name: "index_requests_on_caredom_id"
     t.index ["caregiver_id"], name: "index_requests_on_caregiver_id"
   end

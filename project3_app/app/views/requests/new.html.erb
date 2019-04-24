@@ -3,30 +3,63 @@
 
 <div class = "childDesplay">
 <%= form_for(@request) do |f| %>
- 
   <div class="field">
     <%= f.label :age, "0 to 6 months" %>
     <%= f.number_field :age,  {min: 0, max: 5} %>
   </div>
-
+    <div class="field">
+    <%= f.label :age2, "6 months to 3 years" %>
+    <%= f.number_field :age2,  {min: 0, max: 5} %>
+  </div>
+    <div class="field">
+    <%= f.label :age3, "3 to 6 years" %>
+    <%= f.number_field :age3,  {min: 0, max: 5} %>
+  </div>
+    <div class="field">
+    <%= f.label :age4, "7 years and above" %>
+    <%= f.number_field :age4,  {min: 0, max: 5} %>
+  </div>
     <div class="field">
     <%= f.label :allergies, "Allergies if any?" %>
     <%= f.text_field :allergies %>
   </div>
   <div class="field">
-    <%= f.label :date, "Choose prefered date:" %>
-    <%= f.date_field :date %>
+    <%= f.label :date, "Choose prefered date and time:" %>
+    <%= f.datetime_field :date %>
   </div>
-  
-  <h3>
+  <h5>
     <%= f.submit 'Create Request' %>
-  </h3> 
+  </h5> 
    <% end %>
-  <%= link_to 'Back', requests_path %>
-</div>
+<%= link_to 'Back', requests_path %>
 
-<%#= simple_form_for @request do |f| %>
-  <%#= f.input :age %>
-  <%#= f.input :allergies %>
-  <%#= f.button :submit %>
-<%# end %>
+</div>
+<div class = "seniorDesplay">
+<%= form_for(@request) do |f| %>
+  <div class="field">
+    <%= f.label :age, "Age:" %>
+    <%= f.number_field :age,  {min: 18} %>
+      </div>
+    <div class="field">
+    <%= f.label :gender, "Gender:" %>
+    <%= f.text_field :gender %>
+        </div>
+    <div class="field">
+    <%= f.label :explainsituation, "Explain situation:" %>
+    <%= f.text_field :explainsituation %>
+  </div>
+  <div class="field">
+    <%= f.label :note, "Note:" %>
+    <%= f.text_field :note %>
+  </div>
+ <div class="field">
+    <%= f.label :date, "Choose prefered date and time:" %>
+    <%= f.datetime_field :date %>
+  </div>
+  <h5>
+    <%= f.submit 'Create Request' %>
+  </h5>
+<% end %>
+
+<%= link_to 'Back', requests_path %>
+</div>
