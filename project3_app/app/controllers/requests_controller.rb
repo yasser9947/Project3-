@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def index
-    @request = Request.all
+    @requests = Request.all
   end
 
   def new
@@ -9,13 +9,25 @@ class RequestsController < ApplicationController
 
   def create
     puts params
-    @request = Request.new(request_params)
-    puts @request  
+    @request = Request.create(request_params)
+    @request.caredom_id = current_user.id
+    @request.caregiver_id = current_user.id
+    # @request.request_status = 0 
+    # @request.gender = "male", 
+    # @request.explainsituation = "test" 
+    # @request.note = "test"
+    # caredom_id: 19, caregiver_id: nil
+    p @request.inspect  
+    p @request.errors.full_messages
+    puts current_user.id
     @request.save
     redirect_to @request
   end
-
+ 
   def show
+    @request = Request.find(params[:id])
+    @request.caregiver_id = current_user.id
+    @request.save
   end
 
   def edit
@@ -23,7 +35,7 @@ class RequestsController < ApplicationController
 
     private
     def request_params
-      params.require(:request).permit(:name, :city_id , :care)
+      params.require(:request).permit(:age, :gender, :note, :request_status, :explainsituation, :allergies, :date, :caregiver_id, :caredom_id)
     end
 end
 

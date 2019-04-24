@@ -1,53 +1,44 @@
-<button type="button" class="btn btn-primary child">child</button>
-<button type="button" class="btn btn-success senior">senior</button>
+<button type="button" class="btn btn-primary child">Child-Care</button>
+<button type="button" class="btn btn-success senior">Senior-Care</button>
 
 <div class = "childDesplay">
 <%= form_for(@request) do |f| %>
-  <h1>
-    <%= f.label :name, "Child care" %>
-  </h1>
   <div class="field">
     <%= f.label :age, "0 to 6 months" %>
     <%= f.number_field :age,  {min: 0, max: 5} %>
   </div>
-
     <div class="field">
-    <%= f.label :age, "6 months to 3 years" %>
-    <%= f.number_field :age,  {min: 0, max: 5} %>
+    <%= f.label :age2, "6 months to 3 years" %>
+    <%= f.number_field :age2,  {min: 0, max: 5} %>
   </div>
     <div class="field">
-    <%= f.label :age, "3 to 6 years" %>
-    <%= f.number_field :age,  {min: 0, max: 5} %>
+    <%= f.label :age3, "3 to 6 years" %>
+    <%= f.number_field :age3,  {min: 0, max: 5} %>
   </div>
     <div class="field">
-    <%= f.label :age, "7 years and above" %>
-    <%= f.number_field :age,  {min: 0, max: 5} %>
+    <%= f.label :age4, "7 years and above" %>
+    <%= f.number_field :age4,  {min: 0, max: 5} %>
   </div>
     <div class="field">
     <%= f.label :allergies, "Allergies if any?" %>
     <%= f.text_field :allergies %>
   </div>
   <div class="field">
-    <%= f.label :date, "Choose prefered date:" %>
-    <%= f.date_field :date %>
+    <%= f.label :date, "Choose prefered date and time:" %>
+    <%= f.datetime_field :date %>
   </div>
-  
-
-  <p>
+  <h5>
     <%= f.submit 'Create Request' %>
-  </p> 
+  </h5> 
    <% end %>
-<%= link_to 'Back', requests_path %>
-
+  <%= link_to 'Back', requests_path %>
 </div>
+
 <div class = "seniorDesplay">
 <%= form_for(@request) do |f| %>
-  <h1>
-    <%= f.label :name, "Senior care:" %>
-  </h1>
   <div class="field">
     <%= f.label :age, "Age:" %>
-    <%= f.number_field :age,  {min: 20} %>
+    <%= f.number_field :age,  {min: 18} %>
       </div>
     <div class="field">
     <%= f.label :gender, "Gender:" %>
@@ -58,18 +49,16 @@
     <%= f.text_field :explainsituation %>
   </div>
   <div class="field">
-    <%= f.label :date, "Choose prefered date:" %>
-    <%= f.date_field :date %>
-  </div>
-  <div class="field">
     <%= f.label :note, "Note:" %>
     <%= f.text_field :note %>
   </div>
-
-  <p>
+ <div class="field">
+    <%= f.label :date, "Choose prefered date and time:" %>
+    <%= f.datetime_field :date %>
+  </div>
+  <h5>
     <%= f.submit 'Create Request' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', requests_path %>
+  </h5>
+  <% end %>
+  <%= link_to 'Back', requests_path %>
 </div>
