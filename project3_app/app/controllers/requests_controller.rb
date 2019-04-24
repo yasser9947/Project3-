@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def index
-
+    @request = Request.all
   end
 
   def new
@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 
   def create
     puts params
-    @request = Request.new!(request_params)
+    @request = Request.new(request_params)
     puts @request  
     @request.save
     redirect_to @request

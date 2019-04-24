@@ -1,8 +1,7 @@
 <div class = "paentDesplay">
-<%= form_for(@request) do |f| %>
+ <%= form_for(@request) do |f| %>
   <p>
-    <%= f.label :name, "Child care" %>
-    <%= f.text_field :name %>
+   
   </p>
   <div class="field">
     <%= f.label :age, "0 to 6 months" %>
@@ -33,30 +32,29 @@
   <%= f.collection_check_boxes(:user_id, User.all, :id, :email) %>
     <%# i.label %>
     <%# i.label { i.check_box } %>
-  <% end %>
+
  </div>
 
   <p>
     <%= f.submit 'Create Request' %>
-  </p>
-<% end %>
-
+  </p> 
+   <% end %>
 <%= link_to 'Back', requests_path %>
+
 </div>
 <div class = "nannyDesplay">
 <%= form_for(@request) do |f| %>
   <p>
-    <%= f.label :name, "Senior care:" %>
-    <%= f.text_field :name %>
+ 
   </p>
-  <div class="field">
+        <div class="field">
     <%= f.label :age, "Age:" %>
     <%= f.number_field :age,  {min: 20} %>
-  </div>
+      </div>
     <div class="field">
     <%= f.label :gender, "Gender:" %>
     <%= f.text_field :gender %>
-  </div>
+        </div>
     <div class="field">
     <%= f.label :explainsituation, "Explain situation:" %>
     <%= f.text_field :explainsituation %>

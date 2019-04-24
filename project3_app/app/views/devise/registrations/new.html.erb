@@ -17,14 +17,14 @@
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Caredom</a>
+                                <a class="nav-link active Parent " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Caredom</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Caregiver</a>
+                                <a class="nav-link Nanny" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Caregiver</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active paentDesplay" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Apply as a Employee</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
@@ -56,14 +56,16 @@
                                         </div>
 
                                     </div>
-                             
-                                    <div class="col-md-6 Nanny1">
+
+
+                                    <div class="col-md-6">
+                                    
 
                                         <div class="form-group">
                                        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                                         </div>
                                         <div class="form-group">
-    <%= f.text_field :nationality %>
+                                         <%= f.text_field :nationality %>
                                         </div>
                                         <div class="form-group">
                                              <%= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
@@ -72,18 +74,19 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
                                         </div>
-    <%= f.submit "Sign up" , class:"btnRegister"  %>
+                                 <%= f.submit "Sign up" , class:"btnRegister"  %>
                                     </div>
-                                    
+                                                                                                                                                    <%end%>
+
                                 </div>
                             </div>
-<% end%>
-                                          <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-                            <div class="tab-pane fade show Nanny1" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      
+                            <div class="tab-pane fade show nannyDesplay" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Apply as a Hirer</h3>
                                 <div class="row register-form">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6">                                    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
                                         <div class="form-group">
     <%= f.text_field :name %>
                                         </div>
@@ -115,7 +118,7 @@
 
                                         </div>
                                         <div class="form-group">
-    <%= f.number_field :age,  {min: 18} %>
+                                    <%= f.number_field :age,  {min: 18} %>
                                         </div>
  <div class="form-group">
                                             <%= f.text_field :experience %>

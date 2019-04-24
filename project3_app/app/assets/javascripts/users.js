@@ -1,7 +1,7 @@
 console.log("yasser")
 $(function () {
 
-  $(".Nanny1").click(function () {
+  $(".Nanny").click(function () {
     // alert("Handle user.Nanny");
     $(".paentDesplay").css("display", "none");
     $(".nannyDesplay").css("display", "block");
@@ -11,7 +11,7 @@ $(function () {
 
 
 
-  $(".Parent1").click(function () {
+  $(".Parent").click(function () {
     $(".paentDesplay").css("display", "block");
     $(".nannyDesplay").css("display", "none");
     // alert("Handle user.Parent");
