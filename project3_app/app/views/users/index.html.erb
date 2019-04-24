@@ -56,7 +56,7 @@
 			
 
 			<div class="actions">
-				<button class="btn"> <%= link_to 'Request Service', new_request_path, class: "brown" %></button>
+				<button class="btn"> <%= link_to 'Explore Services', requests_path, class: "brown" %></button>
 				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
                 <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
 			</div>
@@ -74,8 +74,26 @@
 			<div class="box">
 				<span class="value">City:</span>
 				<span class="parameter"><%= @current_user.city.name %></span>
+			
+		
+  
+		<div class="stats1">
+			<div class="box1">
+				<span class="value1">Age:</span>
+				<span class="parameter1"><%= @current_user.age %></span>
+			</div>
+			<div class="box1">
+				<span class="value1">Experience:</span>
+				<span class="parameter1"> <%= @current_user.experience %> </span>
+			</div>
+			<div class="box1">
+				<span class="value1">Description:</span>
+				<span class="parameter1"><%= @current_user.description %></span>
+			</div>
 			</div>
 		</div>
   </div>
+</div>
+</div>
 </div>
 <% end%>
