@@ -12,11 +12,6 @@ class RequestsController < ApplicationController
     @request = Request.create(request_params)
     @request.caredom_id = current_user.id
     @request.caregiver_id = 1
-    # @request.request_status = 0 
-    # @request.gender = "male", 
-    # @request.explainsituation = "test" 
-    # @request.note = "test"
-    # caredom_id: 19, caregiver_id: nil
     p @request.inspect  
     p @request.errors.full_messages
     puts current_user.id
