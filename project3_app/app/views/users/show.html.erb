@@ -1,16 +1,34 @@
-  <div class = "informtion">
-  <% @user.each do |item| %>
-<figure class="snip1336">
-  <img src="https://source.unsplash.com/user/erondu" alt="sample87" />
-  <figcaption>
-    <h2><%=item.name%><span><%=item.age%></span></h2>
-    <p> <%= item.description %> <%= item.nationality %> </p>
-    <p> <%= item.phone %> <%= item.description %> </p>
-    <p><%=item.care %> <p>
+<div class="frame">
+  <div class="center">
+    
+		<div class="profile">
+			<div class="image">
+				<div class="circle-1"></div>
+				<div class="circle-2"></div>
+                <%= image_tag("logo.png",  height: '70', width: '70') %>
+			</div>
+			
+			<div class="name"><%= @user.name %></div>
+			<div class="job"> <%= @user.nationality%> </div>
+			
+			<div class="actions">
+			
+			</div>
+		</div>
 
-    <a href="#" class="follow">request</a>
-    <a href="#" class="info">More Info</a>
-  </figcaption>
-</figure>
-<% end %>
+		<div class="stats">
+			<div class="box">
+				<span class="value">Email:</span>
+				<span class="parameter"><%= @user.email %></span>
+			</div>
+			<div class="box">
+				<span class="value">Phone:</span>
+				<span class="parameter"> <%= @user.phone %> </span>
+			</div>
+			<div class="box">
+				<span class="value">City:</span>
+				<span class="parameter"><%= @user.city.name%></span>
+			</div>
+		</div>
+  </div>
 </div>

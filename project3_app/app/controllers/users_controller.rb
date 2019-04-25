@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+ before_action :set_user, only: [:show]
   def index
     user_signed_in?
     current_user
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
   def show
     # @user = User.find(params[:id])
-    @user = User.all
+    
 
   end
   def new
@@ -42,5 +43,8 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :city_id , :care, :nationality, :phone, :city, :email)
+    end
+    def set_user
+      @user = User.find(params[:id])
     end
 end

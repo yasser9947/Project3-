@@ -78,7 +78,8 @@ done
 		 </td>
 		    
 		 <%end%>
-			<td> <%= c.name %> </td>
+		 <% dode = "http://localhost:3000/users/" + c.caregiver_id.to_s %>
+			<td> <a href = <%= dode%> > <%= c.name %> </a></td>
     </tr>
   
 		<% end %>
