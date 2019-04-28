@@ -1,0 +1,96 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<% if @current_user.care == true%>
+
+<div class="frame">
+  <div class="center">
+    
+		<div class="profile">
+			<div class="image">
+				<div class="circle-1"></div>
+				<div class="circle-2"></div>
+                <%= image_tag("logo.png",  height: '70', width: '70') %>
+			</div>
+			
+			<div class="name"><span class="value">name:</span><%= f.text_field :name %></div>
+			<div class="job"><span class="value">nationality:</span> <%= f.text_field :nationality %> </div>
+			
+			<div class="actions">
+        <%= f.submit "Update", :class => 'brown btn btn-primary' %>
+        <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
+			</div>
+		</div>
+
+		<div class="stats">
+			<div class="box">
+				<span class="value">Email:</span>
+				<span class="parameter"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></span>
+			</div>
+			<div class="box">
+				<span class="value">Phone:</span>
+				<span class="parameter"> <%= f.text_field :phone %> </span>
+			</div>
+			<div class="box">
+				<span class="value">City:</span>
+        
+				<span class="parameter">
+         <%#= f.collection_select(:city_id, City.all.order(:name), :id, :name, {} ,class: "custom-select select22" ) %>
+<%= f.collection_select(:city_id, City.all, :id, :name) %></span>
+			</div>
+		</div>
+  </div>
+  	<div class="actions">
+      
+  
+</div>
+
+<% else %>
+
+<h1> Welcome to Caredom! you signed up as a Caregiver member. </h1>
+
+
+<div class="frame">
+  <div class="center">
+    
+		<div class="profile">
+			<div class="image">
+				<div class="circle-1"></div>
+				<div class="circle-2"></div>
+                <%= image_tag("logo.png",  height: '70', width: '70') %>
+			</div>
+			
+			<div class="name"><%= f.text_field :name %></div>
+			<div class="job"><%= f.text_field :nationality %> </div>
+			
+
+			<div class="actions">
+			
+        <%= f.submit "Update", :class => 'brown btn btn-primary' %>
+        <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
+			</div>
+		</div>
+		
+		<div class="stats">
+			<div class="box">
+				<span class="value">Email:</span>
+				<span class="parameter"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></span>
+			</div>
+			<div class="box">
+				<span class="value">Phone:</span>
+				<span class="parameter"> <%= f.text_field :phone %></span>
+			</div>
+			<div class="box">
+				<span class="value">City:</span>
+				<span class="parameter"><%= f.collection_select(:city, City.all, :id, :name) %></span>
+			</div>
+		</div>
+  </div>
+</div>
+ 
+<% end%>
+
+<% end%>
+
+ 

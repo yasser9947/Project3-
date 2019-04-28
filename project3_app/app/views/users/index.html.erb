@@ -1,0 +1,190 @@
+<% if @current_user.care == true%>
+
+<div class="frame">
+  <div class="center">
+    
+		<div class="profile">
+			<div class="image">
+				<div class="circle-1"></div>
+				<div class="circle-2"></div>
+                <%= image_tag("logo.png",  height: '70', width: '70') %>
+			</div>
+			
+			<div class="name"><%= @current_user.name %></div>
+			<div class="job"> <%= @current_user.nationality%> </div>
+			
+			<div class="actions">
+				<button class="btn"> <%= link_to 'Request Service', new_request_path, class: "brown" %></button>
+				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
+        <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
+			</div>
+		</div>
+
+		<div class="stats">
+			<div class="box">
+				<span class="value">Email:</span>
+				<span class="parameter"><%= @current_user.email %></span>
+			</div>
+			<div class="box">
+				<span class="value">Phone:</span>
+				<span class="parameter"> <%= @current_user.phone %> </span>
+			</div>
+			<div class="box">
+				<span class="value">City:</span>
+				<span class="parameter"><%= @current_user.city.name %></span>
+			</div>
+		</div>
+  </div>
+</div>
+
+
+<table class="table table17 ">
+  <thead>
+    <tr>
+      <th scope="col">N.requst</th>
+      <th scope="col">Data & Time</th>
+      <th scope="col">Status</th>
+			 <th scope="col">Status</th>
+      <th scope="col">Caregiver</th>
+    </tr><% @current_user.caredoms.each do |c| %>
+	
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= c.id %></th>
+      <td><%= c.date %></td>
+		
+      <td>
+<% if c.request_status == 4%>
+
+  Canceled 
+    <% elsif c.request_status == 1 %>
+   Pending ⏰
+<% elsif c.request_status == 2%>
+   Accepted √
+<%else%>
+Request
+    <% end %>
+		</td>
+      <td>	<% if c.request_status == 2%>
+done
+
+			<%elsif c.request_status == 1 %>
+			<div class = "shooweng">
+					<button type="button" id = <%=c.id %> class="btn btn-success accept">accept</button>
+
+			<button type="button" id = <%=c.id %> class="btn btn-danger reject">reject</button>
+     </div>
+		 </td>
+		    
+		 <%end%>
+		 <% dode = "http://localhost:3000/users/" + c.caregiver_id.to_s %>
+			<td> <a href = <%= dode%> > <%= c.name %> </a></td>
+    </tr>
+  
+		<% end %>
+
+  </tbody>
+</table>
+
+<% else %>
+
+<h1> Welcome to Caredom! you signed up as a Caregiver member. </h1>
+
+
+<div class="frame">
+  <div class="center">
+    
+		<div class="profile">
+			<div class="image">
+				<div class="circle-1"></div>
+				<div class="circle-2"></div>
+                <%= image_tag("logo.png",  height: '70', width: '70') %>
+			</div>
+			
+			<div class="name"><%= @current_user.name %></div>
+			<div class="job"> <%= @current_user.nationality%> </div>
+			
+
+			<div class="actions">
+				<button class="btn"> <%= link_to 'Request Service', requests_path, class: "brown" %></button>
+				<button class="btn"> <%= link_to 'Edit profile', edit_user_registration_path , class: "brown" %></button>
+                <button class="btn"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', class: "brown" %></button>
+			</div>
+		</div>
+		
+		<div class="stats">
+			<div class="box">
+				<span class="value">Email:</span>
+				<span class="parameter"><%= @current_user.email %></span>
+			</div>
+			<div class="box">
+				<span class="value">Phone:</span>
+				<span class="parameter"> <%= @current_user.phone %> </span>
+			</div>
+			<div class="box">
+				<span class="value">City:</span>
+				<span class="parameter"><%= @current_user.city.name %></span>
+			
+		
+  
+		<div class="stats1">
+			<div class="box1">
+				<span class="value1">Age:</span>
+				<span class="parameter1"><%= @current_user.age %></span>
+			</div>
+			<div class="box1">
+				<span class="value1">Experience:</span>
+				<span class="parameter1"> <%= @current_user.experience %> </span>
+			</div>
+			<div class="box1">
+				<span class="value1">Description:</span>
+				<span class="parameter1"><%= @current_user.description %></span>
+			</div>
+			</div>
+		</div>
+  </div>
+</div>
+<table class="table table17 ">
+  <thead>
+    <tr>
+      <th scope="col">N.requst</th>
+      <th scope="col">Data & Time</th>
+      <th scope="col">Status</th>
+      <th scope="col">the details
+</th>
+    </tr><% @current_user.caregivers.each do |c| %>
+	
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= c.id %></th>
+      <td><%= c.date %></td>
+      <td><% if c.request_status == 4%>
+
+  Canceled 
+    <% elsif c.request_status == 1 %>
+   pending ⏰
+<% elsif c.request_status == 2%>
+   accepted √
+
+    <% end %>
+		</td>
+		<% s = "/requests/"+c.id.to_s%>
+      <td>
+		    <a href =<%= s%>> click </a>
+
+			</td>
+    </tr>
+  
+		<% end %>
+
+  </tbody>
+</table>
+
+<% end%>
+
+
+
+		
+

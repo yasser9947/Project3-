@@ -10,6 +10,61 @@
   </head>
 
   <body>
+
+  <% if user_signed_in? %>
+  
+ <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+			
+  <a class="navbar-brand" href="http://localhost:3000/users/home">
+      <img src="https://i.ibb.co/hWwBP8N/logo.png",  class="d-inline-block align-top" height= '70', width= '70' alt=""/>
+  
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">  <li>
+  <a >Logged in as  <strong ><%= current_user.email  %></strong>.</a>
+      </li>
+       <li class="nav-item">
+        <a class ='nav-link' href  ="http://localhost:3000"> My Profile </a>
+      
+      </li>
+    
+      <li class="nav-item">
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %> 
+      </li>
+        <li class="nav-item">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+      </li>
+    </ul>
+  </div>
+</nav>
+<% else %>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+			
+  <a class="navbar-brand" href="#">
+      <img src="https://i.ibb.co/hWwBP8N/logo.png",  class="d-inline-block align-top" height= '70', width= '70' alt=""/>
+  
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+  <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link '  %> 
+      </li>
+      <li class="nav-item">
+  <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+      </li>
+    </ul>
+  </div>
+</nav>
+<% end %>
+
     <%= yield %>
+ 
   </body>
 </html>
